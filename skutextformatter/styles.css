@@ -12,7 +12,7 @@ body {
 
 .container {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 input[type="radio"] {
@@ -21,7 +21,7 @@ input[type="radio"] {
 
 .radios {
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 input[type="text"] {
@@ -30,8 +30,8 @@ input[type="text"] {
   border-radius: 10px;
   border: none;
   width: 20em;
-  height: 36px;
-  font-size: 18px;
+  height: 30px;
+  font-size: 14px;
 }
 
 input[type="number"] {
@@ -40,8 +40,8 @@ input[type="number"] {
   border: none;
   border-radius: 10px;
   width: 20em;
-  height: 36px;
-  font-size: 18px;
+  height: 30px;
+  font-size: 14px;
 }
 
 .formatButton {
@@ -52,9 +52,9 @@ select {
   margin: 15px;
   width: 100px;
   padding: 5px 35px 5px 5px;
-  font-size: 18px;
+  font-size: 14px;
   border: 1px solid #ccc;
-  height: 36px;
+  height: 30px;
   border-radius: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
