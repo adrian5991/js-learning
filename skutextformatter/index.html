@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SKU Text Formatter</title>
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main id="main" class="container">
+    <div>
+      <label for="text-to-format"></label>
+      <textarea id="text-to-format" name="text-to-format" rows="14" cols="100" wrap="soft"
+        placeholder="Add Skus Here"></textarea>
+    </div>
+    <div class="radios">
+      <label for="regularSplit">
+        <input type="radio" id="regularSplit" name="splitStyle"> Regular
+      </label>
+
+      <label for="regexSplit">
+        <input type="radio" id="regexSplit" name="splitStyle" checked> RegEx
+      </label>
+
+      <label for="skuSplit">
+        <input type="radio" id="skuSplit" name="splitStyle"> SKU only
+      </label>
+    </div>
+    <div id="row-2">
+    </div>
+    <div id="row-3">
+    </div>
+    <div id="row-4">
+    </div>
+    <div class="formatButton">
+      <button id="formatButton">Format</button>
+    </div>
+    <div>
+      <label for="formatted-text"></label>
+      <textarea id="formatted-text" name="formatted-text" rows="14" cols="100"
+        wrap="soft"></textarea>
+    </div>
+  </main>
+  <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

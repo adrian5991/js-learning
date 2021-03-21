@@ -1,0 +1,104 @@
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to left, #ba5cda, #c274da, #c88bda, #cea1da, #d3b6da);
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+input[type="radio"] {
+  margin: 10px;
+}
+
+.radios {
+  color: #fff;
+  font-size: 18px;
+}
+
+input[type="text"] {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  width: 20em;
+  height: 36px;
+  font-size: 18px;
+}
+
+input[type="number"] {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  width: 20em;
+  height: 36px;
+  font-size: 18px;
+}
+
+.formatButton {
+  margin: 10px;
+}
+
+select {
+  margin: 15px;
+  width: 100px;
+  padding: 5px 35px 5px 5px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  height: 36px;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+}
+
+button {
+  width: 20em;
+  height: 3em;
+  font-size: 18px;
+  background-color: rgb(172, 36, 172);
+  font-weight: 600;
+  padding: 15px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+textarea {
+  border-radius: 5px;
+  padding: 5px;
+  resize: vertical;
+  font-size: 18px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: "Ubuntu", sans-serif;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: "Ubuntu", sans-serif;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  font-family: "Ubuntu", sans-serif;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: "Ubuntu", sans-serif;
+}
