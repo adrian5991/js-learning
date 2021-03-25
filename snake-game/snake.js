@@ -66,21 +66,19 @@ class Snake {
     yPos = canvas.height / 2,
     height = 0,
     width = 0,
-    radius = 20,
-    color = "blue"
+    radius = 20
   ) {
     this.xPos = xPos;
     this.yPos = yPos;
     this.height = height;
     this.width = width;
     this.radius = radius;
-    this.color = color;
   }
 
-  drawSnake(xPos, yPos, color) {
+  drawSnake(xPos, yPos) {
     ctx.beginPath();
     ctx.arc(xPos, yPos, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = color;
+    ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
   }
@@ -136,40 +134,23 @@ function animate() {
     const newSnake = new Snake();
     bodyCountArray.push(bodyCount);
     snakes.push(newSnake);
-    console.log(snakes, mySnake);
   }
   // console.log(facingDir);
   if (facingDir === "east") {
     for (let i = 0; i < bodyCount; i++) {
-      snakes[i].drawSnake(
-        mySnake.xPos - mySnake.radius * 2 * bodyCountArray[i],
-        mySnake.yPos,
-        "red"
-      );
+      snakes[i].drawSnake(mySnake.xPos - mySnake.radius * 2 * bodyCountArray[i], mySnake.yPos);
     }
   } else if (facingDir === "west") {
     for (let i = 0; i < bodyCount; i++) {
-      snakes[i].drawSnake(
-        mySnake.xPos + mySnake.radius * 2 * bodyCountArray[i],
-        mySnake.yPos,
-        "red"
-      );
+      snakes[i].drawSnake(mySnake.xPos + mySnake.radius * 2 * bodyCountArray[i], mySnake.yPos);
     }
   } else if (facingDir === "north") {
     for (let i = 0; i < bodyCount; i++) {
-      snakes[i].drawSnake(
-        mySnake.xPos,
-        mySnake.yPos - mySnake.radius * 2 * bodyCountArray[i],
-        "red"
-      );
+      snakes[i].drawSnake(mySnake.xPos, mySnake.yPos - mySnake.radius * 2 * bodyCountArray[i]);
     }
   } else if (facingDir === "south") {
     for (let i = 0; i < bodyCount; i++) {
-      snakes[i].drawSnake(
-        mySnake.xPos,
-        mySnake.yPos + mySnake.radius * 2 * bodyCountArray[i],
-        "red"
-      );
+      snakes[i].drawSnake(mySnake.xPos, mySnake.yPos + mySnake.radius * 2 * bodyCountArray[i]);
     }
   }
 
