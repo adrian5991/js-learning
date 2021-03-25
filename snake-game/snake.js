@@ -128,8 +128,8 @@ function animate() {
     mySnake.yPos > myFood.yPos &&
     mySnake.yPos < myFood.yPos + myFood.height
   ) {
-    myFood.xPos = getRandomIntInclusive(500, canvas.width - 500);
-    myFood.yPos = getRandomIntInclusive(500, canvas.height - 500);
+    myFood.xPos = getRandomIntInclusive(50, canvas.width - 50);
+    myFood.yPos = getRandomIntInclusive(50, canvas.height - 50);
     bodyCount += 1;
     const newSnake = new Snake();
     bodyCountArray.push(bodyCount);
