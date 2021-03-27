@@ -125,20 +125,16 @@ function animate() {
   score(mySnake.length);
 
   // check for border collision
-  if (snakeHead.x > canvas.width) {
+  if (snakeHead.x > canvas.width - 20) {
     // snakeHead.x = 0;
-    console.log(canvas.width);
-    console.log(snakeHead.x);
     gameover(id);
   } else if (snakeHead.x < 0) {
     // snakeHead.x = canvas.width;
-    console.log(canvas.width);
-    console.log(snakeHead.x);
     gameover(id);
   } else if (snakeHead.y < 0) {
     // snakeHead.y = canvas.height;
     gameover(id);
-  } else if (snakeHead.y > canvas.height) {
+  } else if (snakeHead.y > canvas.height - 20) {
     // snakeHead.y = 0;
     gameover(id);
   }
