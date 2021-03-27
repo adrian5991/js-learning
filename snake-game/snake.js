@@ -94,7 +94,7 @@ function score(x) {
   if (!prevScore) {
     ctx.fillText(0, 560, 35);
   }
-  ctx.fillText(localStorage.getItem("snakeScore"), 560, 35);
+  ctx.fillText(localStorage.getItem("snakeScore"), 10, 75);
   return newScore;
 }
 
