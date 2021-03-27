@@ -1,8 +1,6 @@
 const canvas = document.querySelector("#myCanvas");
 const ctx = canvas.getContext("2d");
 const playButton = document.querySelector("#playButton");
-ctx.font = "55px Pangolin";
-ctx.fillText("Snek", canvas.width / 2 - 55, canvas.height / 2 - 100);
 
 playButton.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -71,7 +69,6 @@ class Snake {
       ctx.beginPath();
       ctx.rect(this.snakeBody[i].x, this.snakeBody[i].y, this.height, this.width);
       ctx.fillStyle = "#f27f0a";
-      // ctx.strokeStyle = "black";
       ctx.fill();
       ctx.stroke();
       ctx.closePath();
@@ -121,7 +118,7 @@ function animate() {
   score(mySnake.length);
 
   // check for border collision
-  if (snakeHead.x > canvas.width) {
+  if (snakeHead.x > canvas.width - mySnake.width) {
     // snakeHead.x = 0;
     gameover(id);
   } else if (snakeHead.x < 0) {
@@ -130,7 +127,7 @@ function animate() {
   } else if (snakeHead.y < 0) {
     // snakeHead.y = canvas.height;
     gameover(id);
-  } else if (snakeHead.y > canvas.height) {
+  } else if (snakeHead.y > canvas.height - mySnake.height) {
     // snakeHead.y = 0;
     gameover(id);
   }

@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  background-color: #f3ae67;
 }
 
 #container {
@@ -15,10 +16,21 @@ body {
   right: 0;
   left: 0;
   margin: auto;
-  outline: #dc8af9 10px solid;
+  border-radius: 10px;
+  /* outline: #dc8af9 10px solid; */
   background-image: linear-gradient(to right top, #d475fc, #dc8af9, #e39ff6, #e8b3f3, #ebc7f1);
 }
-
+#title {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-size: 100px;
+  color: white;
+  font-family: "Pangolin", cursive;
+}
 #playButton {
   font-family: "Pangolin", cursive;
   position: absolute;
@@ -26,8 +38,8 @@ body {
   right: 0;
   left: 0;
   top: 0;
-  height: 5%;
-  width: 5%;
+  height: 2em;
+  width: 5em;
   margin: auto;
   border: none;
   border-radius: 10px;
