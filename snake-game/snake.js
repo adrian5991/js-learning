@@ -42,7 +42,7 @@ function Food(height, width) {
 Food.prototype.draw = function () {
   ctx.beginPath();
   ctx.rect(this.xPos, this.yPos, this.width, this.height);
-  ctx.fillStyle = "#d9291e";
+  ctx.fillStyle = "#d475fc";
   ctx.fill();
   ctx.closePath();
 };
@@ -86,16 +86,20 @@ const mySnake = new Snake(objectHeight, objectWidth);
 const myFood = Food(objectHeight, objectWidth);
 
 function score(x) {
-  ctx.font = "35px serif";
+  let newScore = (x - 4) * 10;
+  ctx.font = "35px Pangolin";
   ctx.lineWidth = 1;
-  ctx.fillText((x - 4) * 10, 10, 35);
-  ctx.strokeText((x - 4) * 10, 10, 35);
+  ctx.fillText(newScore, 10, 35);
+  ctx.fillText(localStorage.getItem("snakeScore"), 550, 35);
+  return newScore;
 }
 
 function gameover(id) {
   alert("Game over!");
   document.location.reload();
   clearInterval(id);
+  localStorage.setItem("snakeScore", score(mySnake.length));
+  console.log(localStorage.getItem("snakeScore"));
 }
 
 function animate() {
