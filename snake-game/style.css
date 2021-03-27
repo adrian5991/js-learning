@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #f3ae67;
 }
 
@@ -17,8 +17,7 @@ body {
   left: 0;
   margin: auto;
   border-radius: 10px;
-  /* outline: #dc8af9 10px solid; */
-  /* background-image: linear-gradient(to right top, #d475fc, #dc8af9, #e39ff6, #e8b3f3, #ebc7f1); */
+  /* outline: black 10px solid; */
   background-color: white;
 }
 

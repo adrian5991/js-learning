@@ -90,7 +90,11 @@ function score(x) {
   ctx.font = "35px Pangolin";
   ctx.lineWidth = 1;
   ctx.fillText(newScore, 10, 35);
-  ctx.fillText(localStorage.getItem("snakeScore"), 550, 35);
+  const prevScore = localStorage.getItem("snakeScore");
+  if (!prevScore) {
+    ctx.fillText(0, 560, 35);
+  }
+  ctx.fillText(localStorage.getItem("snakeScore"), 560, 35);
   return newScore;
 }
 
@@ -99,7 +103,6 @@ function gameover(id) {
   document.location.reload();
   clearInterval(id);
   localStorage.setItem("snakeScore", score(mySnake.length));
-  console.log(localStorage.getItem("snakeScore"));
 }
 
 function animate() {
@@ -122,16 +125,20 @@ function animate() {
   score(mySnake.length);
 
   // check for border collision
-  if (snakeHead.x > canvas.width - mySnake.width) {
+  if (snakeHead.x > canvas.width) {
     // snakeHead.x = 0;
+    console.log(canvas.width);
+    console.log(snakeHead.x);
     gameover(id);
   } else if (snakeHead.x < 0) {
     // snakeHead.x = canvas.width;
+    console.log(canvas.width);
+    console.log(snakeHead.x);
     gameover(id);
   } else if (snakeHead.y < 0) {
     // snakeHead.y = canvas.height;
     gameover(id);
-  } else if (snakeHead.y > canvas.height - mySnake.height) {
+  } else if (snakeHead.y > canvas.height) {
     // snakeHead.y = 0;
     gameover(id);
   }
