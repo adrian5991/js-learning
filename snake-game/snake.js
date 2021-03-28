@@ -1,3 +1,12 @@
+/*
+Topics covered in this project:
+  - OOP concepts: prototypes; the class, new, this, Object.create, constructor keywords
+  - drawing things using canvas 
+  - storing info in browser session via localStorage
+  - how to animate things using requestAnimationFrame & setInterval
+  - using unshift and pop to create "snake" effect
+*/
+
 const canvas = document.querySelector("#myCanvas");
 const ctx = canvas.getContext("2d");
 const playButton = document.querySelector("#playButton");
