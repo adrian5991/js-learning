@@ -1,0 +1,65 @@
+html,
+body {
+  background-color: #262525;
+  height: 100%;
+  overflow: hidden;
+}
+
+#timer {
+  font-size: 100px;
+  color: #e2e624;
+  font-family: "Orbitron", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+
+#startStop {
+  width: 150px;
+  height: 75px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  background: #e2e624;
+  box-shadow: 0 9px #4c4d48;
+}
+
+#reset {
+  width: 150px;
+  height: 75px;
+  outline: none;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  border-radius: 10px;
+  font-size: 20px;
+  background: #e2e624;
+  box-shadow: 0 9px #4c4d48;
+}
+
+#startStop:hover {
+  cursor: pointer;
+}
+
+#reset:hover {
+  cursor: pointer;
+}
+
+.active-button {
+  background-color: #b5b807 !important;
+  box-shadow: 0px 5px #4c4d48 !important;
+  transform: translateY(4px);
+}
+
+#reset:active {
+  background-color: #ebf100;
+  box-shadow: 0 5px #4c4d48;
+  transform: translateY(4px);
+}

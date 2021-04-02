@@ -7,14 +7,22 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="author" content="agerard" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
-    <p id="timer"></p>
-    <button id="stop">Stop</button>
-    <button id="start">Start</button>
-    <button id="reset">Reset</button>
+    <main class="container">
+        <div>
+            <p id="timer" name="timer"></p>
+        </div>
+        <div id="buttons">
+            <button id="reset" name="reset">Reset</button>
+            <button id="startStop" name="startStop">Start</button>
+        </div>
+    </main>
     <script type="text/javascript" src="script.js"></script>
 </body>
 
