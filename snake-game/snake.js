@@ -1,6 +1,9 @@
 /*
 Topics covered in this project:
   - OOP concepts: prototypes; the class, new, this, Object.create, constructor keywords
+  - idea behind creating a function inside of prototype versus constructor; 
+    in the prototype, the function is shared amongst all instances while
+    in the constructor the function is created each time
   - drawing things using canvas 
   - storing info in browser session via localStorage
   - how to animate things using requestAnimationFrame & setInterval

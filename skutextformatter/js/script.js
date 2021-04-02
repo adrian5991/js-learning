@@ -1,6 +1,12 @@
 import * as obj from "./objects.js";
 import * as split from "./splitFunctions.js";
 
+/*
+Topics covered in this project:
+  - DOM manipulation using getElementById, addEventListener, etc.
+  - creating elements in the DOM using javascript
+*/
+
 // Empty divs
 const rowTwo = document.getElementById("row-2");
 const rowThree = document.getElementById("row-3");
