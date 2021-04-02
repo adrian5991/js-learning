@@ -47,25 +47,24 @@ function stop() {
 
 function updateTimer(start, offset) {
   let delta = Date.now() - start;
-  let elapsed = Math.floor(delta / 1000) + offset;
+  let elapsed = Math.floor(delta / 1000) + 3599;
   stopWatch.seconds = elapsed;
   if (elapsed > 59) {
     if (elapsed % 60 === 0) {
-      stopWatch.minutes++;
+      stopWatch.minutes = elapsed / 60;
     }
-    stopWatch.seconds = resetSeconds(elapsed, stopWatch.minutes);
-    if (stopWatch.minutes % 60 === 0) {
-      stopWatch.minutes = 0;
-      stopWatch.hours++;
+    if (elapsed % 3600 === 0) {
+      stopWatch.hours = elapsed / 3600;
     }
   }
   if (elapsed < 0) {
     elapsed = 0;
   }
-
+  const displayMinutes = resetTime(stopWatch.minutes, stopWatch.hours);
+  const displaySeconds = resetTime(stopWatch.seconds, stopWatch.minutes);
   const hh = addZero(stopWatch.hours);
-  const mm = addZero(stopWatch.minutes);
-  const ss = addZero(stopWatch.seconds);
+  const mm = addZero(displayMinutes);
+  const ss = addZero(displaySeconds);
   timer.innerHTML = `${hh}:${mm}:${ss}`;
   return stopWatch;
 }
@@ -77,6 +76,6 @@ function addZero(num) {
   return num;
 }
 
-function resetSeconds(num, minutes) {
-  return num - 60 * minutes;
+function resetTime(num, minSec) {
+  return num - 60 * minSec;
 }
