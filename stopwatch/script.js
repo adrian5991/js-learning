@@ -59,6 +59,9 @@ function updateTimer(start, offset) {
       stopWatch.hours++;
     }
   }
+  if (elapsed < 0) {
+    elapsed = 0;
+  }
 
   const hh = addZero(stopWatch.hours);
   const mm = addZero(stopWatch.minutes);

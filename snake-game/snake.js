@@ -137,7 +137,7 @@ function animate() {
   score(mySnake.length);
 
   // check for border collision
-  if (snakeHead.x > canvas.width - 20) {
+  if (snakeHead.x > canvas.width) {
     // snakeHead.x = 0;
     gameover(id);
   } else if (snakeHead.x < 0) {
@@ -146,7 +146,7 @@ function animate() {
   } else if (snakeHead.y < 0) {
     // snakeHead.y = canvas.height;
     gameover(id);
-  } else if (snakeHead.y > canvas.height - 20) {
+  } else if (snakeHead.y > canvas.height) {
     // snakeHead.y = 0;
     gameover(id);
   }
