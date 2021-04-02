@@ -47,7 +47,7 @@ function stop() {
 
 function updateTimer(start, offset) {
   let delta = Date.now() - start;
-  let elapsed = Math.floor(delta / 1000) + 3599;
+  let elapsed = Math.floor(delta / 1000) + offset;
   stopWatch.seconds = elapsed;
   if (elapsed > 59) {
     if (elapsed % 60 === 0) {
@@ -68,6 +68,7 @@ function updateTimer(start, offset) {
   timer.innerHTML = `${hh}:${mm}:${ss}`;
   return stopWatch;
 }
+b;
 
 function addZero(num) {
   if (num < 10) {
