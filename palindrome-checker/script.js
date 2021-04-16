@@ -3,21 +3,13 @@ textNode.addEventListener("input", (input) => {
   document.querySelector("#answer").innerHTML = palindromeChecker(input.target.value);
 
   function palindromeChecker(text) {
-    const arr = text.toLowerCase().split("");
-    const compareArr = arr.slice();
-    const newArr = [];
-    function equals(a, b) {
-      if (a.length === b.length && a.every((ele, ind) => ele === b[ind])) {
-        return true;
+    const arr = text.toLowerCase().replace(/[\W_]/g, "");
+    const compareArr = arr.split("");
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] != compareArr.pop()) {
+        return false;
       }
-      return false;
     }
-    for (let j = 0; j < text.length; j++) {
-      newArr.push(arr.pop());
-    }
-    if (equals(newArr, compareArr)) {
-      return "Yes";
-    }
-    return "Nope";
+    return true;
   }
 });
