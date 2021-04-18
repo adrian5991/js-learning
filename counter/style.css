@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.buttons {
+  font-size: x-large;
+  cursor: pointer;
+}
+
+#counter {
+  font-size: 100px;
+  /* margin-bottom: 0.5em; */
+}

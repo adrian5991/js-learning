@@ -1,0 +1,20 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+
+#clickMe {
+  font-size: xx-large;
+  border-radius: 5px;
+  cursor: pointer;
+}
