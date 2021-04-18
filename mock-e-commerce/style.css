@@ -12,26 +12,18 @@ main {
   flex: 1;
 }
 
-.first-container {
-  background-image: url("images/231768.jpg");
+.image-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/231768.jpg");
   background-repeat: no-repeat;
-  width: 2880px;
-  height: 1800px;
-  display: flex;
-}
-
-.text-container {
+  width: 100%;
+  height: 1500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  width: 100%;
   flex-direction: column;
-}
-
-.main-image {
-  background-size: contain;
-  width: 100%;
+  z-index: 0;
+  position: relative;
 }
 
 header {
@@ -42,6 +34,7 @@ header {
   margin: auto;
   width: 100%;
   background-color: white;
+  z-index: 10000;
 }
 
 nav {
@@ -52,7 +45,6 @@ nav {
   flex-wrap: wrap;
   height: 120px;
   transition: 0.2s;
-  z-index: 100000000;
 }
 
 .hidden {
@@ -73,7 +65,7 @@ nav {
   text-decoration: none;
   text-transform: uppercase;
   color: #7d7d7d;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 0.2em;
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
@@ -93,7 +85,7 @@ nav {
 
 .logo {
   display: flex;
-  width: 66%;
+  width: 75%;
   justify-content: center;
 }
 
@@ -148,7 +140,7 @@ a {
   font-size: x-large;
   color: white;
   font-weight: bold;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
