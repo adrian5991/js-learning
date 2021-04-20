@@ -46,12 +46,26 @@ document.querySelector("#magnify").addEventListener("click", () => {
   closeSearchBar.style.display = "";
 });
 
+// hamburger menu
+document.querySelector("#icon").addEventListener("click", () => {
+  const navItems = Array.from(document.querySelectorAll(".nav-wrapper"));
+  navItems.map((ele) => {
+    if (Array.from(ele.classList).includes("active")) {
+      ele.classList.remove("active");
+      ele.classList.remove("responsive");
+    } else {
+      ele.classList.add("responsive");
+      ele.classList.add("active");
+    }
+  });
+});
+
 // scrolling
 window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector("nav").style.height = "80px";
+    document.querySelector("nav").style.height = "6vh";
   } else {
-    document.querySelector("nav").style.height = "120px";
+    document.querySelector("nav").style.height = "10vh";
   }
 });
 
