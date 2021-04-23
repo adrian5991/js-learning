@@ -1,71 +1,82 @@
 const searchBarAttrs = {
   type: "text",
-  class: "search-bar hidden",
+  class: "search-bar",
   placeholder: "Search Products",
   name: "Search Bar",
 };
 
-const closeSearchBarAttrs = {
-  class: "search-bar hidden",
+const exitSearchBtnAttrs = {
+  class: "search-bar",
   id: "exit-search",
 };
+
+const searchContainerAttrs = {
+  class: "search-container",
+};
+
+//search container
+const searchContainer = document.createElement("div");
+setAttributes(searchContainer, searchContainerAttrs);
 
 // search bar
 const searchBar = document.createElement("input");
 setAttributes(searchBar, searchBarAttrs);
 
 // exit search bar button
-const closeSearchBar = document.createElement("button");
-setAttributes(closeSearchBar, closeSearchBarAttrs);
-closeSearchBar.innerHTML = "x";
+const exitSearchBtn = document.createElement("button");
+setAttributes(exitSearchBtn, exitSearchBtnAttrs);
+exitSearchBtn.innerHTML = "x";
 
+searchContainer.appendChild(searchBar);
+searchContainer.appendChild(exitSearchBtn);
+
+// exit search bar on click mobile
+exitSearchBtn.addEventListener("click", () => closeSearchBar(".mobile-nav"));
+exitSearchBtn.addEventListener("click", () => closeSearchBar(".main-nav-items"));
+
+// show search bar
+document
+  .querySelector("#magnifyDesktop")
+  .addEventListener("click", () => showSearchBar(".main-nav-items", ".main-nav"));
+document
+  .querySelector("#magnify")
+  .addEventListener("click", () => showSearchBar(".mobile-nav", ".top"));
+
+// hamburger menu
 document.querySelector(".hamburger").addEventListener("click", () => {
   const navbar = document.querySelector(".main-nav");
   navbar.classList.toggle("active");
 
-  let navItems = Array.from(document.querySelectorAll(".nav-links"));
-  navItems = navItems.filter((e) => !e.classList.contains("nav-item"));
-  navItems.map((ele) => ele.classList.toggle("active"));
+  let navLinks = Array.from(document.querySelectorAll(".nav-links"));
+  navLinks = navLinks.filter((e) => !e.classList.contains("nav-item"));
+  navLinks.map((ele) => ele.classList.toggle("active"));
 });
 
 // scrolling
 window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.querySelector(".top").style.height = "7vh";
-    document.querySelector(".search-container").style.height = "7vh";
+    // document.querySelector(".search-container").style.height = "7vh";
+    document.querySelector(".main-nav").style.height = "7vh";
   } else {
     document.querySelector(".top").style.height = "10vh";
-    document.querySelector(".search-container").style.height = "10vh";
+    document.querySelector(".main-nav").style.height = "10vh";
+    // document.querySelector(".search-container").style.height = "10vh";
   }
 });
 
-// exit search bar on click
-closeSearchBar.addEventListener("click", () => {
-  const navItems = Array.from(document.querySelectorAll(".top"));
-  navItems.map((ele) => (ele.style.display = "flex"));
+function showSearchBar(navItems, mainNav) {
+  const navItemsArray = Array.from(document.querySelectorAll(navItems));
+  navItemsArray.map((ele) => (ele.style.display = "none"));
+  searchContainer.style.display = "flex";
+  document.querySelector(mainNav).appendChild(searchContainer);
+}
 
-  // document.querySelector(".logo").style.display = "";
-
-  searchBar.style.display = "none";
-  closeSearchBar.style.display = "none";
-});
-
-// show search bar
-document.querySelector("#magnify").addEventListener("click", () => {
-  // const navItems = Array.from(document.querySelectorAll(".top"));
-  // navItems.map((ele) => (ele.style.display = "none"));
-  const navItems = document.querySelector(".top");
-  navItems.style.display = "none";
-
-  const container = document.querySelector(".search-container");
-  container.style.display = "flex";
-
-  container.appendChild(searchBar);
-  container.appendChild(closeSearchBar);
-
-  searchBar.style.display = "";
-  closeSearchBar.style.display = "";
-});
+function closeSearchBar(navItems) {
+  const navItemsArray = Array.from(document.querySelectorAll(navItems));
+  navItemsArray.map((ele) => (ele.style.display = ""));
+  searchContainer.style.display = "none";
+}
 
 function setAttributes(ele, attrsObj) {
   for (let key in attrsObj) {
