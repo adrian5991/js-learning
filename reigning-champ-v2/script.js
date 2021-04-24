@@ -31,7 +31,9 @@ searchContainer.appendChild(searchBar);
 searchContainer.appendChild(exitSearchBtn);
 
 // exit search bar on click mobile
-exitSearchBtn.addEventListener("click", () => closeSearchBar(".mobile-nav"));
+exitSearchBtn.addEventListener("click", () =>
+  closeSearchBar(".mobile-nav, .main-nav-items, .main-nav")
+);
 exitSearchBtn.addEventListener("click", () => closeSearchBar(".main-nav-items"));
 
 // show search bar
@@ -40,7 +42,9 @@ document
   .addEventListener("click", () => showSearchBar(".main-nav-items", ".main-nav"));
 document
   .querySelector("#magnify")
-  .addEventListener("click", () => showSearchBar(".mobile-nav", ".top"));
+  .addEventListener("click", () =>
+    showSearchBar(".mobile-nav, .main-nav-items, .main-nav", ".top")
+  );
 
 // hamburger menu
 document.querySelector(".hamburger").addEventListener("click", () => {
@@ -63,8 +67,11 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// helper functions
+
 function showSearchBar(navItems, mainNav) {
   const navItemsArray = Array.from(document.querySelectorAll(navItems));
+  // document.querySelector(".main-nav").classList.toggle("active");
   navItemsArray.map((ele) => (ele.style.display = "none"));
   searchContainer.style.display = "flex";
   document.querySelector(mainNav).appendChild(searchContainer);

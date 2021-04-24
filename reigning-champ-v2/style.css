@@ -35,7 +35,10 @@ header {
 .main-nav {
   padding: 10px;
   display: none;
-  background-color: white;
+  transition: 0.5s;
+  -webkit-animation: slide-down 0.5s ease-out;
+  -moz-animation: slide-down 0.5s ease-out;
+  animation: slide-down 0.5s ease-out;
 }
 
 .nav-links {
@@ -102,6 +105,9 @@ li {
 .search-container {
   width: 100%;
   justify-content: center;
+  -webkit-animation: slide-in 0.5s ease-out;
+  -moz-animation: slide-in 0.5s ease-out;
+  animation: slide-in 0.5s ease-out;
 }
 
 .search-bar {
@@ -121,6 +127,70 @@ li {
 
 #exit-search {
   cursor: pointer;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes slide-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
