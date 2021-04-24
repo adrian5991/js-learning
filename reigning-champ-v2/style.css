@@ -8,6 +8,7 @@ body {
 
 /* navigation */
 
+/* navigation bar */
 header {
   position: fixed;
   top: 0;
@@ -24,21 +25,11 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 10vh;
+  width: 100vw;
   transform-origin: 100% 0;
-  transition: 0.2s;
-}
-
-.hamburger {
-  cursor: pointer;
-}
-
-.icon {
-  text-decoration: none;
-  font-size: 2.5vh;
-}
-
-li {
-  list-style-type: none;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
 }
 
 .main-nav {
@@ -59,9 +50,29 @@ li {
   border-bottom: 1px solid transparent;
 }
 
+.nav-links:hover {
+  color: black;
+}
+
 .active {
   display: flex;
   flex-direction: column;
+}
+
+/* navigation items */
+
+.hamburger-icon {
+  text-decoration: none;
+  padding-left: 20px;
+  font-size: 4vh;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
 }
 
 .icons {
@@ -74,7 +85,14 @@ li {
 }
 
 .logo {
-  padding: 2px;
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+  z-index: -1;
+}
+
+#shopping {
+  padding-right: 20px;
 }
 
 .hoodie {
@@ -136,6 +154,8 @@ li {
     flex: 0 0 75%;
     display: flex;
     justify-content: center;
+    position: unset;
+    z-index: unset;
   }
 }
 

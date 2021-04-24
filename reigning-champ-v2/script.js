@@ -55,13 +55,11 @@ document.querySelector(".hamburger").addEventListener("click", () => {
 // scrolling
 window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector(".top").style.height = "7vh";
-    // document.querySelector(".search-container").style.height = "7vh";
-    document.querySelector(".main-nav").style.height = "7vh";
+    document.querySelector(".top").style.height = "8vh";
+    document.querySelector(".main-nav").style.height = "8vh";
   } else {
     document.querySelector(".top").style.height = "10vh";
     document.querySelector(".main-nav").style.height = "10vh";
-    // document.querySelector(".search-container").style.height = "10vh";
   }
 });
 
