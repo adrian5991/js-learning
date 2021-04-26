@@ -113,6 +113,7 @@ function addToCartListener() {
       const price = info.dataset.price;
       const name = info.dataset.name;
       addItem(name, price, 1);
+      alert("Added to cart");
     });
   }
 }
@@ -169,9 +170,7 @@ function removeCartListener() {
 
 /* populate main products */
 
-function populateProducts() {
-  const arr = ["one", "two", "three", "four", "five", "six"];
-  const price = ["29.29", "19.99", "12.99", "89.99", "99.99", "37.99"];
+function populateProducts(arr, price) {
   let html = "";
   for (let i = 0; i < arr.length; i++) {
     html += `<div class="flex-item">
@@ -189,6 +188,15 @@ function populateProducts() {
 }
 
 if (window.location.pathname.includes("womens.html")) {
-  populateProducts();
+  const arr = ["one", "two", "three", "four", "five", "six"];
+  const price = ["29.29", "19.99", "12.99", "89.99", "99.99", "37.99"];
+  populateProducts(arr, price);
+  addToCartListener();
+}
+
+if (window.location.pathname.includes("mens.html")) {
+  const arr = ["seven", "eight", "nine", "ten", "eleven", "twelve"];
+  const price = ["29.29", "19.99", "12.99", "89.99", "99.99", "37.99"];
+  populateProducts(arr, price);
   addToCartListener();
 }

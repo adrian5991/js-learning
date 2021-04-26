@@ -229,6 +229,80 @@ li {
   }
 }
 
+/* shopping cart */
+
+#shopping {
+  padding-right: 20px;
+}
+
+.shopping-cart {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.shopping-cart > main {
+  height: 20vh;
+}
+
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1em;
+  margin-top: 1em;
+  width: 100vw;
+  align-items: center;
+  margin-left: 2em;
+}
+
+.remove-cart-item {
+  outline: none;
+  border: none;
+  background-color: white;
+  padding-right: 40px;
+  font-size: 2vh;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.active-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active-cart > header {
+  display: flex;
+  position: unset;
+  justify-content: space-between;
+  border-bottom: #7d7d7d solid 1px;
+  align-items: center;
+}
+
+#exit-cart {
+  outline: none;
+  border: none;
+  background-color: white;
+  padding-right: 40px;
+  font-size: 3vh;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.active-cart > header > h1 {
+  padding-left: 40px;
+  font-size: 3vh;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+
+.hidden {
+  display: none;
+}
+
 /* main content */
 
 .image-container {
