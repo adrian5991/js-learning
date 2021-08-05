@@ -31,7 +31,7 @@ export function getSkusOnly(delimiter, sku_prefix) {
   let newStr = str
     .replace(/\W/g, delimiter)
     .split(delimiter)
-    .filter((ele) => ele.slice(0, 6) === sku_prefix)
+    .filter((ele) => ele.slice(0, 2) === sku_prefix)
     .map((ele) => `'${ele}',`)
     .join("")
     .slice(0, -1);
